@@ -1,4 +1,4 @@
-package 软件工程;
+package 杞欢宸ョ▼;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -22,14 +22,14 @@ public class WordCount
             int charactercount=0;
             int wordline = 0;
             int wordcount = 0;
-            List<String> lists = new ArrayList<String>();  //存储处理后的列表  
+            List<String> lists = new ArrayList<String>(); 
             String readLine = null;
             
             while((readLine = br.readLine()) != null) 
             {  
                 wordline++;
                 readLine = readLine.toLowerCase();
-                charactercount += Test.CountEachLineCharacter(readLine);//统计每行的字符数   
+                charactercount += Test.CountEachLineCharacter(readLine);  
                 wordcount += Test.CountWordNum(readLine, lists);
             }           
             br.close();  
@@ -38,7 +38,7 @@ public class WordCount
             Test.CountEachWordNum(wordsCount, lists);
                 
             Print p = new Print(args[1]);
-            p.SortMap(wordsCount,wordline,wordcount,charactercount+wordline);  //排序并输出
+            p.SortMap(wordsCount,wordline,wordcount,charactercount+wordline);  
         }catch(ArrayIndexOutOfBoundsException ee) 
         {
             System.out.println("Error");
