@@ -1,4 +1,4 @@
-package è½¯ä»¶å·¥ç¨‹;
+package Èí¼þ¹¤³Ì;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -22,24 +22,25 @@ public class WordCount
             int charactercount=0;
             int wordline = 0;
             int wordcount = 0;
-            List<String> lists = new ArrayList<String>(); 
+            List<String> lists = new ArrayList<String>();  
             String readLine = null;
             
             while((readLine = br.readLine()) != null) 
             {  
                 wordline++;
                 readLine = readLine.toLowerCase();
-                charactercount += Test.CountEachLineCharacter(readLine);  
+                charactercount += Test.CountEachLineCharacter(readLine);
                 wordcount += Test.CountWordNum(readLine, lists);
             }           
-            br.close(); 
+            br.close();  
                 
             Map<String, Integer> wordsCount = new TreeMap<String,Integer>(); 
             Test.CountEachWordNum(wordsCount, lists);
                 
             Print p = new Print(args[1]);
-            p.SortMap(wordsCount,wordline,wordcount,charactercount+wordline);  
-        }catch(ArrayIndexOutOfBoundsException ee) 
+            p.SortMap(wordsCount,wordline,wordcount,charactercount+wordline); 
+        }
+        catch(ArrayIndexOutOfBoundsException ee) 
         {
             System.out.println("Error");
         }catch(FileSystemAlreadyExistsException f) 
