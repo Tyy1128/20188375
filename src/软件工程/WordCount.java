@@ -32,7 +32,7 @@ public class WordCount
                 charactercount += Test.CountEachLineCharacter(readLine);  
                 wordcount += Test.CountWordNum(readLine, lists);
             }           
-            br.close();  
+            br.close(); 
                 
             Map<String, Integer> wordsCount = new TreeMap<String,Integer>(); 
             Test.CountEachWordNum(wordsCount, lists);
@@ -51,7 +51,4 @@ public class WordCount
             System.out.println(e);
         }
     } 
-
-
-
 }  
