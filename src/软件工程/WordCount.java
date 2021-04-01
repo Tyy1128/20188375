@@ -11,7 +11,6 @@ import java.util.TreeMap;
  
 public class WordCount 
 {  
-  
     public static void main(String[] args) 
     {  
         try 
@@ -19,18 +18,17 @@ public class WordCount
             String inputfile = args[0];
     
             BufferedReader br = new BufferedReader(new FileReader(inputfile));  
-            int charactercount=0;
+            int characterscount=0;
             int wordline = 0;
             int wordcount = 0;
             List<String> lists = new ArrayList<String>();  
             String readLine = null;
-            
             while((readLine = br.readLine()) != null) 
             {  
                 wordline++;
                 readLine = readLine.toLowerCase();
-                charactercount += Test.CountEachLineCharacter(readLine);
-                wordcount += Test.CountWordNum(readLine, lists);
+                characterscount = Test.CountEachLineCharacter(readLine)+1;
+                wordcount = Test.CountWordNum(readLine, lists)+1;
             }           
             br.close();  
                 
@@ -38,12 +36,13 @@ public class WordCount
             Test.CountEachWordNum(wordsCount, lists);
                 
             Print p = new Print(args[1]);
-            p.SortMap(wordsCount,wordline,wordcount,charactercount+wordline); 
+            p.SortMap(wordsCount,wordline,wordcount,characterscount+wordline);  
         }
         catch(ArrayIndexOutOfBoundsException ee) 
         {
             System.out.println("Error");
-        }catch(FileSystemAlreadyExistsException f) 
+        }
+        catch(FileSystemAlreadyExistsException f) 
         {
             System.out.println("Not find this file");
         }
